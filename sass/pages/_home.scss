@@ -1,0 +1,145 @@
+
+/* Services Section */
+
+.services {
+   padding-top: 6rem;
+
+   @include responsive(768px) {
+      margin-top: 8rem;
+   }
+}
+
+.services__line {
+   width: 8rem;
+   height: 1px;
+   background-color: $grayColor;
+   margin-bottom: 3rem;
+   margin-left: auto;
+   margin-right: auto;
+
+   @include responsive(768px) {
+      margin-left: 0;
+   }
+}
+
+.services__title {
+   @include title;
+   text-align: center;
+
+   @include responsive(768px) {
+      text-align: left;
+   }
+}
+
+.services__grid {
+   margin-top: 4rem;
+   margin-bottom: 2rem;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-row-gap: 1.6rem;
+   text-align: center;
+
+   @include responsive(768px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 2rem;
+      text-align: left;
+   }
+
+   @include responsive(870px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 3rem;
+   }
+}
+
+.services__subtitle {
+   @include title;
+   font-size: 1.7rem;
+   color: $principalColor;
+
+   @include responsive(768px) {
+      margin-top: 2rem;
+   }
+}
+
+.services__description {
+   color: $grayColor;
+   line-height: 1.7;
+}
+
+/* About Section */
+
+.about {
+   background-color: $principalColor;
+   margin-top: 4rem;
+   padding: 3rem 1rem;
+   position: relative;
+   overflow: hidden;
+
+   @include responsive(768px) {
+      margin-top: 8rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      padding-left: 3rem;
+      padding-right: 3rem;
+   }
+}
+
+.about__info {
+   position: relative;
+   z-index: 100;
+}
+
+.about__title {
+   @include title;
+   text-align: center;
+   color: $veryLightColor;
+
+   @include responsive(768px) {
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 0;
+   }
+}
+
+.about__action {
+   margin-top: 1.8rem;
+   display: flex;
+   justify-content: center;
+   position: relative;
+   z-index: 100;
+
+   @include responsive(768px) {
+      justify-self: end;
+   }
+}
+
+.about__button {
+   @include btn(0.5rem, 1.2rem, transparent, $veryLightColor, 0.85rem);
+   border: 2px solid $veryLightColor;
+   transition: 0.3s;
+   will-change: background-color;
+}
+
+.about__button:hover {
+   background-color: $veryLightColor;
+   color: $principalColor;
+}
+
+.about__lines {
+   background-image: url('../images/bg-pattern-how-we-work-mobile.svg');
+   width: 150px;
+   height: 250px;
+   background-size: cover;
+   background-position: center;
+   position: absolute;
+   top: 0;
+   right: -0.55rem;
+   z-index: 10;
+
+   @include responsive(768px) {
+      background-image: url('../images/bg-pattern-how-we-work-desktop.svg');
+      width: 434px;
+      height: 250px;
+   }
+}

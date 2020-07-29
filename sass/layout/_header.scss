@@ -1,0 +1,139 @@
+
+.header {
+   background-color: $principalColor;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   margin-top: 12vh;
+   position: relative;
+
+   @include responsive(576px) {
+      padding-top: 4rem;
+   }
+
+   .container {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      @include responsive(576px) {
+         grid-template-columns: repeat(2, 1fr);
+         grid-column-gap: 1rem;
+      }
+
+      @include responsive(768px) {
+         grid-template-columns: 1.5fr 1fr;
+      }
+   }
+}
+
+.header__lines:nth-child(1),
+.header__lines:nth-child(2) {
+   position: absolute;
+   background-size: cover;
+   background-repeat: no-repeat;
+}
+
+.header__lines:nth-child(1) {
+   background-image: url('../images/bg-pattern-intro-left-mobile.svg');
+   width: 150px;
+   height: 150px;
+   left: 0;
+   bottom: 16.5rem;
+
+   @include responsive(576px) {
+      background-image: url('../images/bg-pattern-intro-left-desktop.svg');
+      width: 195px;
+      height: 504px;
+      top: 20rem;
+   }
+}
+
+.header__lines:nth-child(2) {
+   right: 0;
+   bottom: -12rem;
+   width: 124px;
+   height: 300px;
+   background-image: url('../images/bg-pattern-intro-right-mobile.svg');
+}
+
+.header__info {
+   padding-top: 3rem;
+   padding-bottom: 3rem;
+   text-align: center;
+   position: relative;
+   z-index: 10;
+
+   @include responsive(576px) {
+      order: -1;
+      text-align: left;
+      padding-top: 0;
+      padding-bottom: 1rem;
+      width: 90%;
+   }
+}
+
+.header__title {
+   @include title;
+   color: $veryLightColor;
+
+   @include responsive(576px) {
+      margin-top: 0;
+      font-size: 2.5rem;
+   }
+
+   @include responsive(768px) {
+      margin-top: 0;
+      font-size: 3.8rem;
+
+      &:before {
+         content: '';
+         display: block;
+         width: 10rem;
+         height: 1px;
+         background-color: $veryLightColor;
+         margin-bottom: 2rem;
+      }
+   }
+}
+
+.header__description {
+   color: $veryLightColor;
+   line-height: 1.7;
+}
+
+.header__media {
+   order: -1;
+   width: 100%;
+   height: 65vh;
+   position: relative;
+   @include responsive(576px) {
+      order: 1;
+   }
+}
+
+.header__image {
+   width: 100%;
+   height: inherit;
+   position: absolute;
+   left: 0;
+   background-image: url('../images/image-intro-mobile.jpg');
+   background-position: left center;
+   background-size: cover;
+
+   @include responsive(576px) {
+      background-image: url('../images/image-intro-desktop.jpg');
+      height: 80vh;
+   }
+}
+
+.header__button {
+   @include btn(0.6rem, 1.8rem, transparent, $veryLightColor, 0.9rem);
+   margin-top: 1rem;
+   border: 2px solid $veryLightColor;
+   transition: 0.3s;
+   will-change: background-color;
+}
+
+.header__button:hover {
+   background-color: $veryLightColor;
+   color: $principalColor;
+}

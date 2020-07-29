@@ -1,0 +1,124 @@
+
+.navbar {
+   height: 12vh;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   background-color: $veryLightColor;
+   z-index: 1000;
+
+   .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: inherit;
+   }
+}
+
+.navbar__menu {
+   display: none;
+
+   @include responsive(768px) {
+      display: flex;
+      align-items: center;
+   }
+}
+
+.navbar__link {
+   display: block;
+   padding: 0.25rem 0.75rem;
+   color: $secondaryColor;
+   text-transform: uppercase;
+   transition: 0.3s;
+   will-change: color;
+   font-weight: 700;
+   font-size: 0.9rem;
+}
+
+.navbar__link:hover {
+   color: $principalColor;
+}
+
+.navbar__link--plans {
+   border: 2px solid $principalColor;
+   padding: 0.35rem 0.75rem;
+   color: $principalColor;
+   transition: 0.4s;
+   will-change: background-color color;
+   margin-left: 0.5rem;
+}
+
+.navbar__link--plans:hover {
+   color: $veryLightColor;
+   background-color: $principalColor;
+}
+
+.navbar__bars {
+   grid-column: 3 / 4;
+   border: 2px solid $principalColor;
+   padding: 0.3rem 0.55rem;
+   display: block;
+
+   @include responsive(768px) {
+      display: none;
+   }
+}
+
+/* Navbar Mobile */
+
+.mobile {
+   position: fixed;
+   top: 5rem;
+   left: 0;
+   width: 100%;
+   height: 100vh;
+   background-color: darken($grayColor, 28%);
+   z-index: 1000;
+   display: block;
+   overflow: hidden;
+   transform: translateY(-1000px);
+   transition: 0.3s;
+   will-change: transform;
+
+   &.active {
+      transform: translateY(0);
+   }
+
+   @include responsive(768px) {
+      display: none;
+   }
+}
+
+.mobile__menu {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   height: 88vh;
+   padding-top: 4rem;
+   padding-bottom: 4rem;
+}
+
+.mobile__link {
+   color: $veryLightColor;
+   font-size: 1.25rem;
+   font-weight: 700;
+   text-transform: uppercase;
+}
+
+.mobile__item:last-of-type {
+   border: 2px solid $veryLightColor;
+   padding: 0.75rem 4rem;
+   position: relative;
+   z-index: 100;
+}
+
+.mobile__lines {
+   position: absolute;
+   bottom: 0;
+   background-image: url('../images/bg-pattern-mobile-nav.svg');
+   background-position: center bottom;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100%;
+}
