@@ -80,6 +80,18 @@
    transition: 0.3s;
    will-change: transform;
 
+   &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      background-image: url('../images/bg-pattern-mobile-nav.svg');
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+   }
+
    &.active {
       transform: translateY(0);
    }
@@ -111,14 +123,4 @@
    padding: 0.75rem 4rem;
    position: relative;
    z-index: 100;
-}
-
-.mobile__lines {
-   position: absolute;
-   bottom: 0;
-   background-image: url('../images/bg-pattern-mobile-nav.svg');
-   background-position: center bottom;
-   background-repeat: no-repeat;
-   width: 100%;
-   height: 100%;
 }

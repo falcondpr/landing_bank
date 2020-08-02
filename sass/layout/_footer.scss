@@ -7,27 +7,30 @@
    background-color: $veryLightColor;
    position: relative;
    overflow-x: hidden;
+   z-index: 100;
+
+   &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('../images/bg-pattern-footer-mobile.svg');
+      background-size: cover;
+      background-position: center;
+      width: 374px;
+      height: 173px;
+      z-index: 1;
+
+      @include responsive(768px) {
+         background-image: url('../images/bg-pattern-footer-desktop.svg');
+         width: 500px;
+         height: 230px;
+      }
+   }
 
    @include responsive(768px) {
       margin-top: 8rem;
-   }
-}
-
-.footer__lines {
-   position: absolute;
-   top: 0;
-   left: 0;
-   background-image: url('../images/bg-pattern-footer-mobile.svg');
-   background-size: cover;
-   background-position: center;
-   width: 374px;
-   height: 173px;
-   z-index: 10;
-
-   @include responsive(768px) {
-      background-image: url('../images/bg-pattern-footer-desktop.svg');
-      width: 500px;
-      height: 230px;
    }
 }
 

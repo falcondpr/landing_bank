@@ -11,7 +11,6 @@
 
 .services__line {
    width: 8rem;
-   height: 1px;
    background-color: $grayColor;
    margin-bottom: 3rem;
    margin-left: auto;
@@ -75,6 +74,26 @@
    position: relative;
    overflow: hidden;
 
+   &::before {
+      content: '';
+      display: block;
+      background-image: url('../images/bg-pattern-how-we-work-mobile.svg');
+      width: 150px;
+      height: 250px;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      right: -0.55rem;
+      z-index: 10;
+
+      @include responsive(768px) {
+         background-image: url('../images/bg-pattern-how-we-work-desktop.svg');
+         width: 434px;
+         height: 250px;
+      }
+   }
+
    @include responsive(768px) {
       margin-top: 8rem;
       display: grid;
@@ -115,7 +134,7 @@
 }
 
 .about__button {
-   @include btn(0.5rem, 1.2rem, transparent, $veryLightColor, 0.85rem);
+   @include btn(0.5rem, 1.2rem, $principalColor, $veryLightColor, 0.85rem);
    border: 2px solid $veryLightColor;
    transition: 0.3s;
    will-change: background-color;
@@ -124,22 +143,4 @@
 .about__button:hover {
    background-color: $veryLightColor;
    color: $principalColor;
-}
-
-.about__lines {
-   background-image: url('../images/bg-pattern-how-we-work-mobile.svg');
-   width: 150px;
-   height: 250px;
-   background-size: cover;
-   background-position: center;
-   position: absolute;
-   top: 0;
-   right: -0.55rem;
-   z-index: 10;
-
-   @include responsive(768px) {
-      background-image: url('../images/bg-pattern-how-we-work-desktop.svg');
-      width: 434px;
-      height: 250px;
-   }
 }

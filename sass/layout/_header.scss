@@ -6,6 +6,40 @@
    margin-top: 12vh;
    position: relative;
 
+   &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url('../images/bg-pattern-intro-left-mobile.svg');
+      width: 150px;
+      height: 150px;
+      left: 0;
+      bottom: 16.5rem;
+
+      @include responsive(576px) {
+         background-image: url('../images/bg-pattern-intro-left-desktop.svg');
+         width: 195px;
+         height: 504px;
+         top: 20rem;
+      }
+   }
+
+   &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+      right: 0;
+      bottom: -12rem;
+      width: 124px;
+      height: 300px;
+      background-image: url('../images/bg-pattern-intro-right-mobile.svg');
+      z-index: 10;
+   }
+
    @include responsive(576px) {
       padding-top: 4rem;
    }
@@ -23,36 +57,6 @@
          grid-template-columns: 1.5fr 1fr;
       }
    }
-}
-
-.header__lines:nth-child(1),
-.header__lines:nth-child(2) {
-   position: absolute;
-   background-size: cover;
-   background-repeat: no-repeat;
-}
-
-.header__lines:nth-child(1) {
-   background-image: url('../images/bg-pattern-intro-left-mobile.svg');
-   width: 150px;
-   height: 150px;
-   left: 0;
-   bottom: 16.5rem;
-
-   @include responsive(576px) {
-      background-image: url('../images/bg-pattern-intro-left-desktop.svg');
-      width: 195px;
-      height: 504px;
-      top: 20rem;
-   }
-}
-
-.header__lines:nth-child(2) {
-   right: 0;
-   bottom: -12rem;
-   width: 124px;
-   height: 300px;
-   background-image: url('../images/bg-pattern-intro-right-mobile.svg');
 }
 
 .header__info {
@@ -126,7 +130,7 @@
 }
 
 .header__button {
-   @include btn(0.6rem, 1.8rem, transparent, $veryLightColor, 0.9rem);
+   @include btn(0.6rem, 1.8rem, $principalColor, $veryLightColor, 0.9rem);
    margin-top: 1rem;
    border: 2px solid $veryLightColor;
    transition: 0.3s;
