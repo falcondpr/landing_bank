@@ -1,5 +1,5 @@
 
-const menuMobile = document.querySelector('.mobile');
+const menu = document.querySelector('.navbar__menu');
 const navbarButton = document.querySelector('#navbarButton');
 
 navbarButton.addEventListener('click', () => {
@@ -12,5 +12,5 @@ navbarButton.addEventListener('click', () => {
    } else {
       navbarButton.innerHTML = htmlTimes;
    }
-   menuMobile.classList.toggle('active');
+   menu.classList.toggle('active');
 });
