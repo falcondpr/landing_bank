@@ -16,13 +16,14 @@
       width: 150px;
       height: 150px;
       left: 0;
-      bottom: 16.5rem;
+      bottom: 18rem;
 
       @include responsive(576px) {
          background-image: url('../images/bg-pattern-intro-left-desktop.svg');
          width: 195px;
          height: 504px;
          top: 20rem;
+         bottom: 16.5;
       }
    }
 
@@ -60,13 +61,14 @@
 }
 
 .header__info {
-   padding-top: 3rem;
+   padding-top: 2.2rem;
    padding-bottom: 3rem;
    text-align: center;
    position: relative;
    z-index: 10;
 
    @include responsive(576px) {
+      padding-top: 3rem;
       order: -1;
       text-align: left;
       padding-top: 0;
