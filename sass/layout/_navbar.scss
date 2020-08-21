@@ -122,8 +122,11 @@
 .navbar__bars {
    grid-column: 3 / 4;
    border: 2px solid $principalColor;
-   padding: 0.3rem 0.55rem;
+   padding: 0.3rem 0.58rem;
    display: block;
+   background-color: transparent;
+   outline: none;
+   cursor: pointer;
 
    @include responsive(768px) {
       display: none;
