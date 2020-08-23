@@ -61,8 +61,8 @@
 }
 
 .header__info {
-   padding-top: 2.2rem;
-   padding-bottom: 3rem;
+   padding-top: 1.2rem;
+   padding-bottom: 2rem;
    text-align: center;
    position: relative;
    z-index: 10;
@@ -79,15 +79,14 @@
 
 .header__title {
    @include title;
+   margin-top: 0;
    color: $veryLightColor;
 
    @include responsive(576px) {
-      margin-top: 0;
       font-size: 2.5rem;
    }
 
    @include responsive(768px) {
-      margin-top: 0;
       font-size: 3.8rem;
 
       &:before {
@@ -118,16 +117,11 @@
 
 .header__image {
    width: 100%;
-   height: inherit;
-   position: absolute;
-   left: 0;
-   background-image: url('../images/image-intro-mobile.jpg');
-   background-position: left center;
-   background-size: cover;
+   object-fit: cover;
+   height: 100%;
 
-   @include responsive(576px) {
-      background-image: url('../images/image-intro-desktop.jpg');
-      height: 80vh;
+   @include responsive(768px) {
+      min-height: 550px;
    }
 }
 
